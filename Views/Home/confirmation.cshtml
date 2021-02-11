@@ -1,0 +1,13 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Restaurant Submitted";
+}
+
+@model resturants.Models.UserRestaurants;
+
+<div>
+    <h3>Thank you for submitting @Model.RestaurantName!</h3>
+    <p>Click <a asp-action="userRests">here</a> to see other submissions.</p>
+</div>

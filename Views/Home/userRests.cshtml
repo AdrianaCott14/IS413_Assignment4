@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Restaurants submitted by users like you!";
+}
+
+@model IEnumerable<resturants.Models.UserRestaurants>
+
+<div class="container">
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Restaurant Name</th>
+                    <th>Favorite Dish</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (resturants.Models.UserRestaurants x in Model)
+                {
+                <tr>
+                    <td>@x.Name</td>
+                    <td>@x.RestaurantName</td>
+                    @if (x.favDish == null)
+                    {
+                        <td>It's all tasty!</td>
+                    }
+
+                    else {
+                        <td>@x.favDish</td>
+                    }
+                    <td>@x.PhoneNum</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
